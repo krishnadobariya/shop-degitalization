@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+/* Base Input Styles */
+.input {
+  @apply w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-white text-slate-900;
+  padding-left: 1rem; /* Default */
+}
+
+/* FORCE Padding for inputs with icons */
+.input-with-icon {
+  padding-left: 3rem !important;
+}
+
+/* Custom UI Components */
+.btn-primary {
+  @apply px-5 py-2.5 rounded-xl font-bold transition-all duration-200 active:scale-95 inline-flex items-center justify-center;
+  @apply bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply px-5 py-2.5 rounded-xl font-bold transition-all duration-200 active:scale-95 inline-flex items-center justify-center;
+  @apply bg-white text-slate-700 border border-slate-200 hover:bg-slate-50;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-slate-200 p-6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white;
+  }
+}
+.print-only {
+  display: none;
+}
